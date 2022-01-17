@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
-    <header>
+    <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/index.css">
         <title>Express Frete</title>
-    </header>
+    </head>
 
     <body>
-        <div class="header">
+        <header>
         <nav class="header_toolbar">
             <div class="topzinha">
+            <a href="index.html"> Home </a> </li>
             <a href="cadastro.html"> Cadastro </a> </li>
-            <a href="consulta.html"> Consultas </a></li>
-            <a href="index.html"> Sair </a> </li>
+            <a href="motoristas.html"> Motoristas </a></li>
             </div>
         </nav>
-        </div>
+        </header>
 
         <div class="header_content">
-            <figure><img src="imagem/caminhao4.jpg" width="500px"></figure>
+            <figure class="header_img"><img src="imagem/caminhao4.jpg"></figure><br>
             <div class="header_slogan">Express Frete</div>
         </div>
 
-        <article>        <footer id="rodape">Todos os direitos reservados.</footer>
-        </article>
+        <center>
+            <article>
+                <h1>Login</h1>
+                
+                <div class="login">
+                    <form>
+                        <label for="femail">E-mail:</label><br>
+                        <input type="text" id="femail" name="femail" value=""><br>
+                        <label for="fsenha">Senha:</label><br>
+                        <input type="text" id="fsenha" name="fsenha" value=""><br><br>
+                        <button><a href="motoristas.html">Entrar</a></button>
+                      </form>
+
+                      <a href="cadastro.html">Não tem cadastro?</a>
+                </div>
+                <footer id="rodape">Todos os direitos reservados.</footer>
+            </article>
+        </center>
     </body>
 </html>

@@ -1,36 +1,47 @@
-<!DOCTYPE html>  
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Frete</title>
+<!DOCTYPE html>
 
-    <style>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Express Frete</title>
+    </head>
 
-    </style>
-</head>
-<body>
-    <div class="header toolbar">
-    <nav>
-        <div class="topbarra">
-            <a class="index" href="index.html">Home</a>
-            <a href="consulta.html">Consulta</a>
-            <a href="index.html">Sair</a>
-        </div>
-    </nav>
-    </div>
-    <form>
-        <div>
-            <h2> Cadastrar Dados </h2>
-				<td><label for="nome">Nome</label><br></td>
-				<td><input type="text" id="nome" name="nome"></td>
-        </div>
-        <div>
-            <td>E-mail</td>
-            <td><input type="text" name="email" size="100%" value="@"></td>
+    <body>
+        <header>
+        <nav class="header_toolbar">
+            <div class="topzinha">
+            <a href="index.html"> Home </a> </li>
+            <a href="cadastro.html"> Cadastro </a> </li>
+            <a href="motoristas.html"> Motoristas </a></li>
+            </div>
+        </nav>
+        </header>
+
+        <div class="header_content">
+            <figure class="header_img"><img src="imagem/caminhao4.jpg"></figure><br>
+            <div class="header_slogan">Express Frete</div>
         </div>
 
-    </form>
-</body>
+        <center>
+            <article>
+
+                <h1>Cadastro</h1>
+                
+                <div class="login">
+                    <form>
+                        <label for="femail">Digite seu e-mail:</label><br>
+                        <input type="text" id="femail" name="femail" value=""><br>
+                        <label for="fsenha">Digite a sua senha:</label><br>
+                        <input type="text" id="fsenha" name="fsenha" value=""><br>
+                        <label for="fsenha">Confirme a sua senha:</label><br>
+                        <input type="text" id="fsenha" name="fsenha" value=""><br><br>
+                        <button><a href="motoristas.html">Entrar</a></button>
+                      </form>
+                </div>
+                <footer id="rodape">Todos os direitos reservados.</footer>
+            </article>
+        </center>
+    </body>
 </html>
