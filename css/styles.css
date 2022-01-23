@@ -81,6 +81,7 @@ article {
     background-color: rgb(54, 164, 197);
     overflow: hidden;
     width: 100%;
+    position: relative;
 }
 
 .topzinha a {

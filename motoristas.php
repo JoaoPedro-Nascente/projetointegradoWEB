@@ -12,9 +12,10 @@
         <header>
         <nav class="header_toolbar">
             <div class="topzinha">
-            <a href="index.html"> Home </a> </li>
-            <a href="cadastro.html"> Cadastro </a> </li>
-            <a href="motoristas.html"> Motoristas </a></li>
+                <a href="index.php"> Home </a>
+                <a href="cadastro.php"> Cadastro </a>
+                <a href="motoristas.php"> Motoristas </a>
+                <a align="right" class="profile" href=""> <img class="profpic" src="imagem/profpic.png" style="width: auto; height: auto; max-width: 17px; max-height: 100px; margin: 0px; padding: 0px"> </a>
             </div>
         </nav>
         </header>
