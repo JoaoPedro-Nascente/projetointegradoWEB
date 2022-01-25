@@ -3,14 +3,6 @@ h1 {
     padding: 50px;
 }
 
-.login {
-    display: block;
-}
-
 article {
     align-items: center;
-}
-
-label {
-    left: 0px;
 }

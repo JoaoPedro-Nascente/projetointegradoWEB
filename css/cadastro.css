@@ -1,0 +1,23 @@
+.login {
+    width: 100%;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+}
+
+label, input {
+    width: 150px;
+    margin: 3px;
+}
+
+.teste {
+    display: block;
+    float: left;
+    width: 300px;
+}
+
+#teste {
+    width: 50%;
+    display: block;
+    float: left;
+}
