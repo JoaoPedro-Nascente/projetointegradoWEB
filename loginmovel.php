@@ -6,7 +6,7 @@ require_once 'db_connect.php';
 // array for JSON response
 $response = array();
 
-$username = NULL;
+$usern!ame = NULL;
 $password = NULL;
 
 // Método para mod_php (Apache)
