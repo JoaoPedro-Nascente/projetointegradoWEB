@@ -15,6 +15,7 @@
         require_once 'db_connect.php';
 
         session_start();
+        $_SESSION['logado'] = false;
 
         if (isset($_POST['enviar-formulario'])):
             $erros = array();
@@ -50,9 +51,9 @@
                     if(pg_num_rows($res) == 1):
                         $dados = pg_fetch_array($res);
                         $_SESSION['logado'] = true;
-                        $_SESSION['id_usuario'] = $dados['idUsuario'];
+                        $_SESSION['id_usuario'] = $dados['idusuario'];
                         header("Location: motoristas.php");
-                        exit();
+                    
 
                     else:
                         $erros[] = "Senha incorreta";
@@ -67,6 +68,8 @@
             endif;
 
         endif;
+
+        pg_close($con);
     ?>
 
 

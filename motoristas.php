@@ -17,6 +17,11 @@
 
             //inicio da sessao
             session_start();
+
+            if(!$_SESSION['logado']){
+                header("Location: index.php");
+            }
+
         
             //dados dos motoristas
             $sql = "SELECT * FROM mydb.usuario WHERE idusuario IN(SELECT usuario_idusuario FROM mydb.veiculo)";
@@ -30,7 +35,7 @@
             //echo $linha[1];
         
         
-        
+            pg_close($con);
         
         ?>
 

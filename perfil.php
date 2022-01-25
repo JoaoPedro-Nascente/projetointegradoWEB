@@ -17,16 +17,51 @@
 
             //inicio da sessao
             session_start();
+
+            if($_SESSION['logado'] == 0){
+                header("Location: index.php");
+            }
+
+            //dados do usuario
+            $id = $_SESSION['id_usuario'];
+            $sql = "SELECT * FROM mydb.usuario WHERE idusuario = '$id'";
+            $res = pg_query($con, $sql);
+            $dados = pg_fetch_array($res);
+
+
+            pg_close($con);           
                    
         ?>
 
         <script>
-            function alterna() {
-                var x = document.getElementById("botao");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
+            function alterna(x) {
+
+                var linha = x.slice(1, 2);
+
+                var i0 = document.getElementById("i" + linha + "0");
+                var i1 = document.getElementById("i" + linha + "1");
+                var i2 = document.getElementById("i" + linha + "2");
+                var i3 = document.getElementById("i" + linha + "3");
+                var i4 = document.getElementById("i" + linha + "4");
+
+                //var x = document.getElementById("botao");
+                if(!(x.slice(2, 3).localeCompare("1"))){
+                    
+                    i0.style.display = "none";
+                    i1.style.display = "none";
+                    i2.style.display = "block";
+                    i3.style.display = "block";
+                    i4.style.display = "inline";
+
+
                 } else {
-                    x.style.display = "none";
+
+                    i0.style.display = "inline";
+                    i1.style.display = "block";
+                    i2.style.display = "none";
+                    i3.style.display = "none";
+                    i4.style.display = "none";
+
                 }
             }
         </script>
@@ -53,10 +88,37 @@
                     <p id="botao">Teste</p><button onclick="alterna()">teste</button>
                 </figure>
 
+
                 <div id="dados">
                     <div id="dados-esquerda">
-                        <p>Esquerda</p>
+                        <div class="esquerda">
+                            <p>Nome: </p><br><br>
+                            <p>CPF: </p><br><br>
+                            <p>Email: </p><br><br>
+                        </div>
+                        <div class="direita">
+                            <p id="i10"><?php echo $dados['dscnomeusuario']; ?></p>
+                            <img class="editar" id="i11" src="imagem/edit.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i12" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i13" src="imagem/accept.png">
+                            <input type="text" id="i14" name="fnome" value="">
+                            <br><br>
 
+                            <p id="i20"><?php echo $dados['dscidentificacaousuario']; ?></p>
+                            <img class="editar" id="i21" src="imagem/edit.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i22" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i23" src="imagem/accept.png">
+                            <input type="text" id="i24" name="fnome" value="">
+                            <br><br>
+
+                            <p id="i30"><?php echo $dados['dscemailusuario']; ?></p>
+                            <img class="editar" id="i31" src="imagem/edit.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i32" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar" id="i33" src="imagem/accept.png">
+                            <input type="text" id="i34" name="fnome" value="">
+                            <br><br>
+
+                        </div>
                     </div>
 
                     <div id="dados-direita">

@@ -14,6 +14,7 @@
         require_once 'db_connect.php';
 
         session_start();
+        $_SESSION['logado'] = false;
 
         if (isset($_POST['enviar-formulario'])):
             $erros = array();
@@ -67,7 +68,7 @@
 
                     $dados = pg_fetch_array($res);
                     $_SESSION['logado'] = true;
-                    $_SESSION['id_usuario'] = $dados['idUsuario'];
+                    $_SESSION['id_usuario'] = $dados['idusuario'];
                     header("Location: motoristas.php");
                 }
 
@@ -76,7 +77,9 @@
 
         endif;
 
-?>
+        pg_close($con);
+
+    ?>
 
         <header>
         <nav class="header_toolbar">
