@@ -41,7 +41,7 @@ if (pg_num_rows($result) > 0) {
 		// os detalhes de um produto somente serao transferidos ao cliente 
 		// em caso de real interesse.
         $motorista = array();
-        $motorista["id"] = $row["idUsuario"];
+        $motorista["id"] = $row["idusuario"];
         $motorista["name"] = $row["dscnomeusuario"];
 		$motorista["img"] = $row["img"];
 		$motorista["veiculo"] = $row["dscveiculo"];
