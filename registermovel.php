@@ -34,7 +34,7 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['cpf']) && i
 		$id = $id['max'] + 1;
 
 		// mysql inserting a new row
-		$result = pg_query($con, "INSERT INTO mydb.usuario(idusuario, dscemailusuario, dscsenhausuario, dscidentificacaousuario, dscnomeusuario) VALUES($id, '$newEmail', '$newSenha', '$newCpf', '$newNome')");
+		$result = pg_query($con, "INSERT INTO mydb.usuario(idusuario, dscemailusuario, dscsenhausuario, dscidentificacaousuario, dscnomeusuario, img) VALUES($id, '$newEmail', '$newSenha', '$newCpf', '$newNome', 'profpic.png')");
 	 
 		if ($result) {
 			$response["success"] = 1;
