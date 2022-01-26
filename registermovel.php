@@ -26,8 +26,15 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['cpf']) && i
 		$response["error"] = "usuario ja cadastrado";
 	}
 	else {
+
+		//pegando um id
+		$sql = "SELECT MAX(idusuario) FROM mydb.usuario";
+		$id = pg_query($con, $sql);
+		$id = pg_fetch_array($id);
+		$id = $id['max'] + 1;
+
 		// mysql inserting a new row
-		$result = pg_query($con, "INSERT INTO mydb.usuario(dscemailusuario, dscsenhausuario, dscidentificacaousuario, dscnomeusuario) VALUES('$newEmail', '$newSenha', '$newCpf', '$newNome')");
+		$result = pg_query($con, "INSERT INTO mydb.usuario(idusuario, dscemailusuario, dscsenhausuario, dscidentificacaousuario, dscnomeusuario) VALUES($id, '$newEmail', '$newSenha', '$newCpf', '$newNome')");
 	 
 		if ($result) {
 			$response["success"] = 1;

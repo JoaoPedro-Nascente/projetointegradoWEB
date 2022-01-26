@@ -28,6 +28,11 @@
             $res = pg_query($con, $sql);
             $dados = pg_fetch_array($res);
 
+            if($dados['dsctelusuario'] == ""){
+                $dados['dsctelusuario'] = "Sem celular cadastrado";
+            }
+
+
 
             pg_close($con);           
                    
@@ -99,30 +104,53 @@
                         <div class="direita">
                             <p id="i10"><?php echo $dados['dscnomeusuario']; ?></p>
                             <img class="editar" id="i11" src="imagem/edit.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i12" src="imagem/deny.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i13" src="imagem/accept.png">
-                            <input type="text" id="i14" name="fnome" value="">
+                            <img class="editar-none" id="i12" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar-none"editar" id="i13" src="imagem/accept.png">
+                            <input type="text" class="editar-none" id="i14" name="fnome" value="">
                             <br><br>
 
                             <p id="i20"><?php echo $dados['dscidentificacaousuario']; ?></p>
                             <img class="editar" id="i21" src="imagem/edit.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i22" src="imagem/deny.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i23" src="imagem/accept.png">
-                            <input type="text" id="i24" name="fnome" value="">
+                            <img class="editar-none" id="i22" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i23" src="imagem/accept.png">
+                            <input type="text" class="editar-none" id="i24" name="fnome" value="">
                             <br><br>
 
                             <p id="i30"><?php echo $dados['dscemailusuario']; ?></p>
                             <img class="editar" id="i31" src="imagem/edit.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i32" src="imagem/deny.png" onclick="alterna(this.id)">
-                            <img class="editar" id="i33" src="imagem/accept.png">
-                            <input type="text" id="i34" name="fnome" value="">
+                            <img class="editar-none" id="i32" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i33" src="imagem/accept.png">
+                            <input type="text" class="editar-none" id="i34" name="fnome" value="">
                             <br><br>
 
                         </div>
                     </div>
-
+                    
                     <div id="dados-direita">
-                        <p>Direita</p>
+                        <div class="esquerda">
+                            <p>Celular: </p><br><br>
+                            <p>Nome: </p><br><br>
+                            <p>Nome: </p><br><br>
+                        </div>
+                        <div class="direita">
+                            <p id="i40"><?php echo $dados['dsctelusuario']; ?></p>
+                            <img class="editar" id="i41" src="imagem/edit.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i42" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i43" src="imagem/accept.png">
+                            <input type="text" class="editar-none" id="i44" name="fnome" value="">
+                            <br><br>
+
+                            <p id="i50"><?php echo $dados['dsctelusuario']; ?></p>
+                            <img class="editar" id="i51" src="imagem/edit.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i52" src="imagem/deny.png" onclick="alterna(this.id)">
+                            <img class="editar-none" id="i53" src="imagem/accept.png">
+                            <input type="text" class="editar-none" id="i54" name="fnome" value="">
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div id="dados-embaixo">
+                        <p>Embaixo</p>
                     </div>
 
                 </div>

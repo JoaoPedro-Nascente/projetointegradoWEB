@@ -4,7 +4,7 @@ body {
 
 .profpic1 {
     position: absolute;
-    left: 70px;
+    left: -20px;
     top: 20px;
 }
 
@@ -30,7 +30,7 @@ label, input {
 }
 
 #dados {
-    width: 600px;
+    width: 750px;
     position: absolute;
     right: 30px;
     top: 50px;
@@ -55,16 +55,24 @@ p {
 }
 
 #dados-esquerda {
-    width: 300px;
+    width: 360px;
     display: block;
     float: left;
 }
 
 #dados-direita {
-    background-color: pink;
-    width: 300px;
+    width: 350px;
     display: block;
     float: right;
+}
+
+#dados-emcima {
+    display: inline;
+    background-color: black;
+}
+
+#dados-embaixo {
+    width: 100%;
 }
 
 .editar {
@@ -82,26 +90,13 @@ input {
     display: none;
 }
 
-#i12 {
-    display: none;
-}
-
-#i13 {
-    display: none;
-}
-
-#i22 {
-    display: none;
-}
-
-#i23 {
-    display: none;
-}
-
-#i32 {
-    display: none;
-}
-
-#i33 {
+.editar-none {
+    float: right;
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 20px;
+    margin: 0px;
+    padding: 0px;
     display: none;
 }
