@@ -60,7 +60,7 @@
                     $id = pg_fetch_array($id);
                     $id = $id['max'] + 1;
                     
-                    $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario) VALUES ($id, '$fnome', '$femail', '$fsenha1', '$fcpf');";
+                    $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario, img) VALUES ($id, '$fnome', '$femail', '$fsenha1', '$fcpf', 'profpic.png');";
                     pg_query($con, $sql);
 
                     $sql = "SELECT * FROM mydb.usuario WHERE idusuario = $id";

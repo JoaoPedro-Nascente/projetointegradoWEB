@@ -59,6 +59,10 @@ article {
     position: relative;
 }
 
+.rodape {
+    position: absolute;
+}
+
 .body_content {
     height: 550px;
     width: 100%;
