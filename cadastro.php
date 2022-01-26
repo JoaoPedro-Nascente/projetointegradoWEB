@@ -63,13 +63,11 @@
                     $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario, img) VALUES ($id, '$fnome', '$femail', '$fsenha1', '$fcpf', 'profpic.png');";
                     pg_query($con, $sql);
 
-                    $sql = "SELECT * FROM mydb.usuario WHERE idusuario = $id";
-                    $res = pg_connect($con, $sql);
-                    $res = pg_fetch_array($res);
+
 
                     $dados = pg_fetch_array($res);
                     $_SESSION['logado'] = true;
-                    $_SESSION['id_usuario'] = $dados['idusuario'];
+                    $_SESSION['id_usuario'] = $id;
                     header("Location: motoristas.php");
                 }
 
