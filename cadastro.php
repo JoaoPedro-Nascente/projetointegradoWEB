@@ -64,6 +64,7 @@
                     pg_query($con, $sql);
 
                     $sql = "SELECT * FROM mydb.usuario WHERE idusuario = $id";
+                    $res = pg_connect($con, $sql);
                     $res = pg_fetch_array($res);
 
                     $dados = pg_fetch_array($res);
