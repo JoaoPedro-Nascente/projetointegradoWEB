@@ -33,6 +33,8 @@ if (isset($_POST['nome']) && isset($_POST['email']) && isset($_POST['cpf']) && i
 		$id = pg_fetch_array($id);
 		$id = $id['max'] + 1;
 
+		$newSenha = md5($newSenha);
+
 		// mysql inserting a new row
 		$result = pg_query($con, "INSERT INTO mydb.usuario(idusuario, dscemailusuario, dscsenhausuario, dscidentificacaousuario, dscnomeusuario, img) VALUES($id, '$newEmail', '$newSenha', '$newCpf', '$newNome', 'profpic.png')");
 	 

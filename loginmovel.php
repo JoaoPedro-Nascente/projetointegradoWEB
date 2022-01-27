@@ -29,6 +29,8 @@ if(is_null($username)) {
 else {
     $query = pg_query($con, "SELECT dscsenhausuario FROM mydb.usuario WHERE dscemailusuario='$username'");
 
+	$password = md5($password);
+
 	if(pg_num_rows($query) > 0){
 		$row = pg_fetch_array($query);
 		if($password == $row['dscsenhausuario']){

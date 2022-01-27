@@ -60,7 +60,9 @@
                     $id = pg_fetch_array($id);
                     $id = $id['max'] + 1;
                     
-                    $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario, img) VALUES ($id, '$fnome', '$femail', '$fsenha1', '$fcpf', 'profpic.png');";
+                    $senha = md5($fsenha1);
+
+                    $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario, img) VALUES ($id, '$fnome', '$femail', '$senha', '$fcpf', 'profpic.png');";
                     pg_query($con, $sql);
 
 
@@ -80,19 +82,7 @@
 
     ?>
 
-        <header>
-        <nav class="header_toolbar">
-            <div class="topzinha">
-            <a href="index.php"> Home </a> </li>
-            <a href="cadastro.php"> Cadastro </a> </li>
-            </div>
-        </nav>
-        </header>
-
-        <div class="header_content">
-            <figure class="header_img"><img src="imagem/caminhao4.jpg"></figure><br>
-            <div class="header_slogan">Express Frete</div>
-        </div>
+        <?php include 'header-naologado.php'; ?>
 
         <center>
             <article>
@@ -122,7 +112,7 @@
                         <button type="submit" name="enviar-formulario">Entrar</button>
                       </form>
                 </div>
-                <footer id="rodape">Todos os direitos reservados.</footer>
+                <?php include 'footer.php'; ?>
             </article>
         </center>
     </body>

@@ -31,7 +31,7 @@
                 $erros[] = "Campo senha nao pode estar vazio";
             }
 
-
+            $fsenha = md5($fsenha);
 
             if(!empty($erros)):
                 foreach($erros as $erro):
@@ -74,19 +74,7 @@
 
 
 
-        <header>
-        <nav class="header_toolbar">
-            <div class="topzinha">
-            <a href="index.php"> Home </a> </li>
-            <a href="cadastro.php"> Cadastro </a> </li>
-            </div>
-        </nav>
-        </header>
-
-        <div class="header_content">
-            <figure class="header_img"><img src="imagem/caminhao4.jpg"></figure><br>
-            <div class="header_slogan">Express Frete</div>
-        </div>
+        <?php include 'header-naologado.php'; ?>
 
         <center>
             <article>
@@ -103,7 +91,7 @@
 
                       <a href="cadastro.php">Não tem cadastro?</a>
                 </div>
-                <footer id="rodape">Todos os direitos reservados.</footer>
+                <?php include 'footer.php'; ?>
             </article>
         </center>
     </body>
