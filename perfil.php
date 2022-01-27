@@ -121,9 +121,11 @@
                         echo "<li> $erro </li>";
                     endforeach;
                 else:
+                    $fsenha1 = $senha1;
                     $senha = md5($senha1);
                     $sql = "UPDATE mydb.usuario SET dscsenhausuario = '$senha' WHERE idusuario = $id";
                     $res = pg_query($con, $sql);
+                    $_SESSION['senha'] = $fsenha1;
                     echo "Senha alterada com sucesso";
                 endif;
             endif;
