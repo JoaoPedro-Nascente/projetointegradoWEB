@@ -43,6 +43,7 @@ if (pg_num_rows($result) > 0) {
         $motorista = array();
         $motorista["id"] = $row["idusuario"];
         $motorista["name"] = $row["dscnomeusuario"];
+        $motorista["email"] = $row["dscemailusuario"];
 		$motorista["img"] = $row["img"];
 		$motorista["veiculo"] = $row["dscveiculo"];
 		$motorista["categoria"] = $row["dsccategoriaveiculo"];
