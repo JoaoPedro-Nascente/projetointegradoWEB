@@ -31,7 +31,8 @@
                 $erros[] = "Campo senha nao pode estar vazio";
             }
 
-            $fsenha = md5($fsenha);
+            $fsenha1 = $fsenha;
+            $senha = md5($fsenha);
 
             if(!empty($erros)):
                 foreach($erros as $erro):
@@ -39,7 +40,7 @@
                 endforeach;
             else:
                 $login = pg_escape_string($con, $femail);
-                $senha = pg_escape_string($con, $fsenha);
+                $senha = pg_escape_string($con, $senha);
                 
                 $sql = "SELECT dscEmailUsuario FROM mydb.usuario WHERE dscEmailUsuario = '$login'";
                 $res = pg_query($con, $sql);
@@ -52,6 +53,7 @@
                         $dados = pg_fetch_array($res);
                         $_SESSION['logado'] = true;
                         $_SESSION['id_usuario'] = $dados['idusuario'];
+                        $_SESSION['senha'] = $fsenha1;
                         header("Location: motoristas.php");
                     
 

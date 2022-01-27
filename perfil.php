@@ -22,7 +22,6 @@
                 header("Location: index.php");
             }
 
-
             //altera email
             if (isset($_POST['formulario_email'])):
                 $erros = array();
@@ -105,6 +104,30 @@
                     echo "Descricao de usuario alterada com sucesso";
                 endif;
             endif;
+
+            //Altera senha
+            if (isset($_POST['formulario_senha'])):
+                $erros = array();
+                $id = $_SESSION['id_usuario'];
+                $senha1 = $_POST['fsenha1'];
+                $senha2 = $_POST['fsenha2'];
+            
+                if(($senha1 == "") OR (!$senha1 == $senha2)){
+                    $erros[] = "Senha incorreta";
+                }
+            
+                if(!empty($erros)):
+                    foreach($erros as $erro):
+                        echo "<li> $erro </li>";
+                    endforeach;
+                else:
+                    $senha = md5($senha1);
+                    $sql = "UPDATE mydb.usuario SET dscsenhausuario = '$senha' WHERE idusuario = $id";
+                    $res = pg_query($con, $sql);
+                    echo "Senha alterada com sucesso";
+                endif;
+            endif;
+
 
             //adiciona veiculo
             if (isset($_POST['formulario_veiculo'])):
@@ -334,7 +357,7 @@
                             <br>
 
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                                <p id="i60"><?php echo $dados['dscsenhausuario']; ?></p>
+                                <p id="i60"><?php echo $_SESSION['senha']; ?></p>
                                 <img class="editar" id="i61" src="imagem/edit.png" onclick="alterna(this.id)">
                                 <img class="editar-none" id="i62" src="imagem/deny.png" onclick="alterna(this.id)">
                                 <button type="submit" class="editar-none" id="i63" name="formulario_senha">

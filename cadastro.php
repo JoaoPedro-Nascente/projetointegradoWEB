@@ -60,6 +60,7 @@
                     $id = pg_fetch_array($id);
                     $id = $id['max'] + 1;
                     
+                    $senha1 = $fsenha1;
                     $senha = md5($fsenha1);
 
                     $sql = "INSERT INTO mydb.usuario (idUsuario, dscNomeUsuario, dscEmailUsuario, dscSenhaUsuario, dscIdentificacaoUsuario, img) VALUES ($id, '$fnome', '$femail', '$senha', '$fcpf', 'profpic.png');";
@@ -70,6 +71,7 @@
                     $dados = pg_fetch_array($res);
                     $_SESSION['logado'] = true;
                     $_SESSION['id_usuario'] = $id;
+                    $_SESSION['senha'] = $senha1;
                     header("Location: motoristas.php");
                 }
 
