@@ -68,8 +68,14 @@
                 var email = resultado[item]['dscemailusuario'];
 
                 var descricao = resultado[item]['dscusuario']
+                if (descricao == null){
+                    descricao = "Usuario sem descrição"
+                }
 
                 var contato = resultado[item]['dsctelusuario'];
+                if (contato == null){
+                    contato = "Usuario sem contato"
+                }
 
                 var img = resultado[item]['img'];
 
